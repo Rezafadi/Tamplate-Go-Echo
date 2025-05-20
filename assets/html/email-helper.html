@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Helper</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
+      a {
+        color: #1546d0;
+      }
+      a:hover {
+        color: #df4f0e;
+      }
+      #verification-button:hover {
+        background-color: #df4f0e !important;
+        box-shadow: none !important;
+      }
+    </style>
+  </head>
+  <body style="font-family: Arial, sans-serif">
+    <table
+      style="
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        border-collapse: collapse;
+      "
+    >
+      <tr>
+        <td
+          colspan="2"
+          style="
+            font-weight: bold;
+            font-size: 28px;
+            padding: 25px 0 25px 0;
+            border-bottom: 1px solid #1546d0;
+          "
+        >
+          Helper Notification
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="padding: 0 0 25px 0">
+          Kami ingin memberitahu bahwa ada pengguna yang sedang mengajukan
+          bantuan.
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 0 0 25px 0">Berikut Detail Pengguna Barunya:</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold">Nama</td>
+      </tr>
+      <tr>
+        <td style="padding: 0 0 25px 0">{{.Fullname}}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold">Email</td>
+      </tr>
+      <tr>
+        <td style="padding: 0 0 25px 0">{{.Email}}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold">Phone</td>
+      </tr>
+      <tr>
+        <td style="padding: 0 0 25px 0">{{.Phone}}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold">Pesan</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="padding: 0 0 25px 0">{{.Content}}</td>
+      </tr>
+      <tr>
+        <td style="padding: 30px 0 30px 0; border-top: 1px solid #1546d0">
+          Salam Hangat,
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 0 0 30px 0">
+          <strong>Tim Management</strong>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

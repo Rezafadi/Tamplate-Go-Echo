@@ -1,0 +1,4488 @@
+definitions:
+  reqres.AboutMeRequest:
+    properties:
+      description:
+        type: string
+      image:
+        type: string
+      title:
+        type: string
+      type:
+        type: integer
+    type: object
+  reqres.CartDetailRequest:
+    properties:
+      package_id:
+        type: integer
+      product_id:
+        type: integer
+      quantity:
+        type: integer
+      quantity_package:
+        type: integer
+      size_id:
+        type: integer
+      user_id:
+        description: CartID    int     `json:"cart_id"`
+        type: integer
+    type: object
+  reqres.CartRequest:
+    properties:
+      user_id:
+        type: integer
+    type: object
+  reqres.CategoryRequest:
+    properties:
+      description:
+        type: string
+      name:
+        type: string
+      status:
+        type: integer
+    type: object
+  reqres.ChangePassword:
+    properties:
+      new_password:
+        type: string
+      new_password_confirm:
+        type: string
+    type: object
+  reqres.ChangeStatusOrderRequest:
+    properties:
+      status:
+        type: integer
+    type: object
+  reqres.CustomerDetails:
+    properties:
+      email:
+        type: string
+      first_name:
+        type: string
+      last_name:
+        type: string
+      phone:
+        type: string
+    type: object
+  reqres.EventRequest:
+    properties:
+      description:
+        type: string
+      title:
+        type: string
+    type: object
+  reqres.FaqRequest:
+    properties:
+      answer:
+        type: string
+      question:
+        type: string
+    type: object
+  reqres.ForgotPasswordRequest:
+    properties:
+      email:
+        type: string
+    type: object
+  reqres.HostRequest:
+    properties:
+      address:
+        type: string
+      city_id:
+        type: integer
+      kelurahan:
+        type: string
+      name:
+        type: string
+      phone:
+        type: string
+      postal_code:
+        type: string
+      province_id:
+        type: integer
+      subdistrict_id:
+        type: integer
+    type: object
+  reqres.IcanDelivAWBRequest:
+    properties:
+      awb:
+        type: string
+    type: object
+  reqres.IcanDelivCreateOrderRequest:
+    properties:
+      address_penerima:
+        type: string
+      asuransi:
+        items:
+          type: integer
+        type: array
+      catatan:
+        type: string
+      city_penerima:
+        type: integer
+      cod_switch:
+        type: string
+      date_picker:
+        description: "2024-07-17"
+        type: string
+      dropoff_switch:
+        type: string
+      harga_barang:
+        items:
+          type: integer
+        type: array
+      invoice_id:
+        type: string
+      kategori_barang:
+        items:
+          type: integer
+        type: array
+      kategori_berat:
+        description: dalam kg
+        items:
+          type: integer
+        type: array
+      kategori_jumlah:
+        items:
+          type: integer
+        type: array
+      kategori_lebar:
+        description: dalam cm
+        items:
+          type: integer
+        type: array
+      kategori_panjang:
+        description: dalam cm
+        items:
+          type: integer
+        type: array
+      kategori_tinggi:
+        description: dalam cm
+        items:
+          type: integer
+        type: array
+      kelurahan_penerima:
+        type: string
+      nama_barang:
+        items:
+          type: string
+        type: array
+      nama_penerima:
+        type: string
+      phone_number_penerima:
+        type: string
+      post_code_penerima:
+        type: string
+      province_penerima:
+        type: integer
+      selected_pesanan_type:
+        type: string
+      selected_time:
+        description: pickup start 10am to 18pm
+        type: string
+      subdistrict_penerima:
+        type: integer
+      tariff_service:
+        type: integer
+    type: object
+  reqres.IcanDelivDataCheckTarifRequest:
+    properties:
+      cargo:
+        type: string
+      cod:
+        type: string
+      harga_barang_asuransi:
+        type: integer
+      kategori_barang:
+        items:
+          type: integer
+        type: array
+      product_qty:
+        items:
+          type: integer
+        type: array
+      product_value:
+        items:
+          type: integer
+        type: array
+      product_weight:
+        items:
+          type: integer
+        type: array
+      subdistrict_penerima:
+        type: integer
+      timerange:
+        type: string
+      total_harga_barang:
+        type: integer
+    type: object
+  reqres.ItemDetail:
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      price:
+        type: integer
+      quantity:
+        type: integer
+      url:
+        type: string
+    type: object
+  reqres.LikeRequest:
+    properties:
+      testimoni_product_id:
+        type: integer
+    type: object
+  reqres.LoginRequest:
+    properties:
+      emailorphone:
+        type: string
+      password:
+        type: string
+    type: object
+  reqres.LpBannerRequest:
+    properties:
+      flag:
+        type: integer
+      image:
+        type: string
+      link:
+        type: string
+    type: object
+  reqres.LpBestSellerRequest:
+    properties:
+      description:
+        type: string
+      title:
+        type: string
+    type: object
+  reqres.LpSaleBannerRequest:
+    properties:
+      description:
+        type: string
+      link:
+        type: string
+      title:
+        type: string
+    type: object
+  reqres.LpTestimoniRequest:
+    properties:
+      description:
+        type: string
+      image:
+        type: string
+      image_profile:
+        type: string
+      name:
+        type: string
+      rating:
+        type: integer
+      title:
+        type: string
+    type: object
+  reqres.MidtransPaymentRequest:
+    properties:
+      customer_details:
+        $ref: '#/definitions/reqres.CustomerDetails'
+      item_details:
+        items:
+          $ref: '#/definitions/reqres.ItemDetail'
+        type: array
+      transaction_details:
+        $ref: '#/definitions/reqres.TransactionDetails'
+    type: object
+  reqres.OrderDetailRequest:
+    properties:
+      order_id:
+        type: integer
+      package_id:
+        type: integer
+      price:
+        type: number
+      product_id:
+        type: integer
+      quantity:
+        type: integer
+      quantity_package:
+        type: integer
+      size_id:
+        type: integer
+      user_id:
+        type: integer
+    type: object
+  reqres.OrderRequest:
+    properties:
+      address:
+        type: string
+      city:
+        type: integer
+      email:
+        type: string
+      kelurahan:
+        type: string
+      phone:
+        type: string
+      postal_code:
+        type: string
+      products:
+        items:
+          $ref: '#/definitions/reqres.OrderDetailRequest'
+        type: array
+      province:
+        type: integer
+      shipping_id:
+        type: integer
+      shipping_price:
+        type: number
+      shipping_type:
+        type: integer
+      status:
+        type: integer
+      subdist:
+        type: integer
+      total_price:
+        type: number
+      username:
+        type: string
+      voucher_id:
+        type: integer
+      voucher_price:
+        type: number
+      weight:
+        type: integer
+    type: object
+  reqres.PrivacyPolicyRequest:
+    properties:
+      description:
+        items:
+          type: string
+        type: array
+      title:
+        type: string
+    type: object
+  reqres.ProductPackageDetailCreateRequest:
+    properties:
+      package_id:
+        type: integer
+      product_id:
+        type: integer
+      size_id:
+        type: integer
+    type: object
+  reqres.ProductPackageDetailRequest:
+    properties:
+      product_id:
+        type: integer
+      size_id:
+        type: integer
+    type: object
+  reqres.ProductPackageRequest:
+    properties:
+      description:
+        type: string
+      name:
+        type: string
+      price:
+        type: number
+      products:
+        items:
+          $ref: '#/definitions/reqres.ProductPackageDetailRequest'
+        type: array
+      status:
+        type: integer
+    type: object
+  reqres.ProductRequest:
+    properties:
+      category_id:
+        type: integer
+      description:
+        type: string
+      dimensi:
+        type: string
+      discount_percent:
+        type: number
+      event_id:
+        type: integer
+      image:
+        type: string
+      is_best:
+        type: boolean
+      lebar:
+        type: integer
+      list_image:
+        items:
+          type: string
+        type: array
+      material:
+        type: string
+      name:
+        type: string
+      package_id:
+        type: integer
+      panjang:
+        type: integer
+      price:
+        type: integer
+      selling_price:
+        type: integer
+      size:
+        items:
+          $ref: '#/definitions/reqres.ProductSizeRequest'
+        type: array
+      size_type:
+        type: string
+      status:
+        type: integer
+      stock:
+        type: integer
+      superiority:
+        items:
+          type: string
+        type: array
+      tinggi:
+        type: integer
+      warranty:
+        type: string
+      weight:
+        type: integer
+    type: object
+  reqres.ProductSizeRequest:
+    properties:
+      price:
+        type: number
+      product_id:
+        type: integer
+      size_id:
+        type: integer
+      stock:
+        type: integer
+    type: object
+  reqres.ProductSizeUpdateRequest:
+    properties:
+      id:
+        type: integer
+      price:
+        type: number
+      product_id:
+        type: integer
+      size_id:
+        type: integer
+      stock:
+        type: integer
+    type: object
+  reqres.ProductUpdateRequest:
+    properties:
+      category_id:
+        type: integer
+      description:
+        type: string
+      dimensi:
+        type: string
+      discount_percent:
+        type: number
+      event_id:
+        type: integer
+      image:
+        type: string
+      is_best:
+        type: boolean
+      lebar:
+        type: integer
+      list_image:
+        items:
+          type: string
+        type: array
+      material:
+        type: string
+      name:
+        type: string
+      package_id:
+        type: integer
+      panjang:
+        type: integer
+      price:
+        type: integer
+      selling_price:
+        type: integer
+      size:
+        items:
+          $ref: '#/definitions/reqres.ProductSizeUpdateRequest'
+        type: array
+      size_type:
+        type: string
+      status:
+        type: integer
+      stock:
+        type: integer
+      superiority:
+        items:
+          type: string
+        type: array
+      tinggi:
+        type: integer
+      warranty:
+        type: string
+      weight:
+        type: integer
+    type: object
+  reqres.SizeRequest:
+    properties:
+      description:
+        type: string
+      name:
+        type: string
+    type: object
+  reqres.SyaratKetentuanRequest:
+    properties:
+      description:
+        items:
+          type: string
+        type: array
+      title:
+        type: string
+    type: object
+  reqres.TestimoniProductRequest:
+    properties:
+      description:
+        type: string
+      image:
+        items:
+          type: string
+        type: array
+      order_detail_id:
+        type: integer
+      product_id:
+        type: integer
+      rating:
+        type: number
+      user_id:
+        type: integer
+    type: object
+  reqres.TestimoniProductUpdateStatusRequest:
+    properties:
+      status:
+        type: integer
+    type: object
+  reqres.TransactionDetails:
+    properties:
+      gross_amount:
+        type: integer
+      order_id:
+        type: string
+    type: object
+  reqres.UserEmailHelperNotification:
+    properties:
+      content:
+        type: string
+      email:
+        type: string
+      fullname:
+        type: string
+      phone:
+        type: string
+      subject:
+        type: string
+    type: object
+  reqres.UserRequest:
+    properties:
+      address:
+        type: string
+      email:
+        type: string
+      gender:
+        type: string
+      image:
+        type: string
+      is_verify:
+        type: boolean
+      kab:
+        type: integer
+      kec:
+        type: integer
+      kel:
+        type: string
+      name:
+        type: string
+      password:
+        type: string
+      phone:
+        type: string
+      postal_code:
+        type: string
+      prov:
+        type: integer
+      role_id:
+        type: integer
+      tgl_lahir:
+        type: string
+    type: object
+  reqres.UserUpdateRequest:
+    properties:
+      address:
+        type: string
+      email:
+        type: string
+      gender:
+        type: string
+      image:
+        type: string
+      is_verify:
+        type: boolean
+      kab:
+        type: integer
+      kec:
+        type: integer
+      kel:
+        type: string
+      name:
+        type: string
+      phone:
+        type: string
+      postal_code:
+        type: string
+      prov:
+        type: integer
+      role_id:
+        type: integer
+      tgl_lahir:
+        type: string
+    type: object
+  reqres.VoucherRequest:
+    properties:
+      code_voucher:
+        type: string
+      description:
+        type: string
+      discount:
+        type: integer
+      max_price:
+        type: integer
+      min_price:
+        type: integer
+      name:
+        type: string
+      nominal:
+        type: number
+      status:
+        type: integer
+      type:
+        type: string
+    type: object
+info:
+  contact: {}
+  description: API documentation by BASIC
+  title: BASIC
+  version: "1.0"
+paths:
+  /v1/about-me:
+    get:
+      consumes:
+      - application/json
+      description: Get About Me
+      parameters:
+      - description: Type
+        in: query
+        name: type
+        type: integer
+      - description: search By Title
+        in: query
+        name: search
+        type: string
+      - description: limit default 10
+        in: query
+        name: limit
+        type: string
+      - description: offset
+        in: query
+        name: offset
+        type: string
+      - description: sort ASC or DESC
+        in: query
+        name: sort
+        type: string
+      - description: order by id
+        in: query
+        name: order
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get About Me
+      tags:
+      - AboutMe
+    post:
+      consumes:
+      - application/json
+      description: Create About Me
+      parameters:
+      - description: Create About Me Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.AboutMeRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Create About Me
+      tags:
+      - AboutMe
+  /v1/about-me/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete About Me
+      parameters:
+      - description: About Me ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Delete About Me
+      tags:
+      - AboutMe
+    get:
+      consumes:
+      - application/json
+      description: Get About Me By ID
+      parameters:
+      - description: About Me ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get About Me By ID
+      tags:
+      - AboutMe
+    put:
+      consumes:
+      - application/json
+      description: Update About Me
+      parameters:
+      - description: About Me ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update About Me Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.AboutMeRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Update About Me
+      tags:
+      - AboutMe
+  /v1/auth/activate-account/{id}:
+    put:
+      consumes:
+      - application/json
+      description: Aktivate Account
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Aktivate Account
+      tags:
+      - Auth
+  /v1/auth/change-password-login:
+    put:
+      consumes:
+      - application/json
+      description: Change Password Login
+      parameters:
+      - description: Change Password Request
+        in: body
+        name: req
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.ChangePassword'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Change Password Login
+      tags:
+      - Auth
+  /v1/auth/email-verify:
+    post:
+      consumes:
+      - application/json
+      description: Send Email Verify Email
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Send Email Verify Email
+      tags:
+      - Auth
+  /v1/auth/forgot-password:
+    post:
+      consumes:
+      - application/json
+      description: Forgot Password
+      parameters:
+      - description: Forgot Password Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.ForgotPasswordRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Forgot Password
+      tags:
+      - Auth
+  /v1/auth/login/admin:
+    post:
+      consumes:
+      - application/json
+      description: Login Admin
+      parameters:
+      - description: Login Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.LoginRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Login Admin
+      tags:
+      - Auth
+  /v1/auth/login/user:
+    post:
+      consumes:
+      - application/json
+      description: Login User
+      parameters:
+      - description: Login Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.LoginRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Login User
+      tags:
+      - Auth
+  /v1/auth/register:
+    post:
+      consumes:
+      - application/json
+      description: Register
+      parameters:
+      - description: Register Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.UserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Register
+      tags:
+      - Auth
+  /v1/auth/reset-password/{id}:
+    put:
+      consumes:
+      - application/json
+      description: Reset Password
+      parameters:
+      - description: Reset Password Request
+        in: body
+        name: req
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.ChangePassword'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Reset Password
+      tags:
+      - Auth
+  /v1/cart:
+    post:
+      consumes:
+      - application/json
+      description: Create Cart
+      parameters:
+      - description: Create Cart Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.CartRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Create Cart
+      tags:
+      - Cart
+  /v1/cart/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Cart
+      parameters:
+      - description: Cart ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Delete Cart
+      tags:
+      - Cart
+    put:
+      consumes:
+      - application/json
+      description: Update Cart
+      parameters:
+      - description: Cart ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update Cart Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.CartRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Update Cart
+      tags:
+      - Cart
+  /v1/cart/user:
+    get:
+      consumes:
+      - application/json
+      description: Get Cart By User ID
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Cart By User ID
+      tags:
+      - Cart
+  /v1/dashboard/businessinsight/addtocart:
+    get:
+      consumes:
+      - application/json
+      description: Get Dashboard Business Insight Add To Cart
+      parameters:
+      - description: Start Date
+        in: query
+        name: start_date
+        required: true
+        type: string
+      - description: End Date
+        in: query
+        name: end_date
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Dashboard Business Insight Add To Cart
+      tags:
+      - DashboardBusinessInsight
+  /v1/dashboard/businessinsight/order:
+    get:
+      consumes:
+      - application/json
+      description: Get Dashboard Business Insight Order
+      parameters:
+      - description: Start Date
+        in: query
+        name: start_date
+        required: true
+        type: string
+      - description: End Date
+        in: query
+        name: end_date
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Dashboard Business Insight Order
+      tags:
+      - DashboardBusinessInsight
+  /v1/dashboard/businessinsight/sales:
+    get:
+      consumes:
+      - application/json
+      description: Get Dashboard Business Insight Sales
+      parameters:
+      - description: Start Date
+        in: query
+        name: start_date
+        required: true
+        type: string
+      - description: End Date
+        in: query
+        name: end_date
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Dashboard Business Insight Sales
+      tags:
+      - DashboardBusinessInsight
+  /v1/dashboard/businessinsight/user:
+    get:
+      consumes:
+      - application/json
+      description: Get Dashboard Business Insight User
+      parameters:
+      - description: Start Date
+        in: query
+        name: start_date
+        required: true
+        type: string
+      - description: End Date
+        in: query
+        name: end_date
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Dashboard Business Insight User
+      tags:
+      - DashboardBusinessInsight
+  /v1/dashboard/keymetric/addtocart:
+    get:
+      consumes:
+      - application/json
+      description: Get Dashboard Key Metric Add To Cart
+      parameters:
+      - description: Start Date
+        in: query
+        name: start_date
+        required: true
+        type: string
+      - description: End Date
+        in: query
+        name: end_date
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Dashboard Key Metric Add To Cart
+      tags:
+      - DashboardKeyMetric
+  /v1/dashboard/keymetric/order:
+    get:
+      consumes:
+      - application/json
+      description: Get Dashboard Key Metric Order
+      parameters:
+      - description: Start Date
+        in: query
+        name: start_date
+        required: true
+        type: string
+      - description: End Date
+        in: query
+        name: end_date
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Dashboard Key Metric Order
+      tags:
+      - DashboardKeyMetric
+  /v1/dashboard/keymetric/sales:
+    get:
+      consumes:
+      - application/json
+      description: Get Dashboard Key Metric Sales
+      parameters:
+      - description: Start Date
+        in: query
+        name: start_date
+        required: true
+        type: string
+      - description: End Date
+        in: query
+        name: end_date
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Dashboard Key Metric Sales
+      tags:
+      - DashboardKeyMetric
+  /v1/dashboard/keymetric/user:
+    get:
+      consumes:
+      - application/json
+      description: Get Dashboard Key Metric User
+      parameters:
+      - description: Start Date
+        in: query
+        name: start_date
+        required: true
+        type: string
+      - description: End Date
+        in: query
+        name: end_date
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Dashboard Key Metric User
+      tags:
+      - DashboardKeyMetric
+  /v1/dashboard/rangking/penjualanproductteratas:
+    get:
+      consumes:
+      - application/json
+      description: Get Dashboard Penjualan Product Teratas
+      parameters:
+      - description: Start Date
+        in: query
+        name: start_date
+        required: true
+        type: string
+      - description: End Date
+        in: query
+        name: end_date
+        required: true
+        type: string
+      - description: Sort DESC/ASC
+        in: query
+        name: sort
+        required: true
+        type: string
+      - description: Category ID
+        in: query
+        name: category_id
+        required: true
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        required: true
+        type: string
+      - description: Order price/total
+        in: query
+        name: order
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Dashboard Penjualan Product Teratas
+      tags:
+      - DashboardRangking
+  /v1/dashboard/rangking/pesananperkategori:
+    get:
+      consumes:
+      - application/json
+      description: Get Dashboard Pesanan Per Kategori
+      parameters:
+      - description: Start Date
+        in: query
+        name: start_date
+        required: true
+        type: string
+      - description: End Date
+        in: query
+        name: end_date
+        required: true
+        type: string
+      - description: Sort DESC/ASC
+        in: query
+        name: sort
+        required: true
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Dashboard Pesanan Per Kategori
+      tags:
+      - DashboardRangking
+  /v1/dashboard/rangking/userorderteratas:
+    get:
+      consumes:
+      - application/json
+      description: Get Dashboard User Order Teratas
+      parameters:
+      - description: Start Date
+        in: query
+        name: start_date
+        required: true
+        type: string
+      - description: End Date
+        in: query
+        name: end_date
+        required: true
+        type: string
+      - description: Sort DESC/ASC
+        in: query
+        name: sort
+        required: true
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Dashboard User Order Teratas
+      tags:
+      - DashboardRangking
+  /v1/dashboard/todolist/cancelshipment:
+    get:
+      consumes:
+      - application/json
+      description: Get Dashboard Todo List Cancel Shipment
+      parameters:
+      - description: Start Date
+        in: query
+        name: start_date
+        required: true
+        type: string
+      - description: End Date
+        in: query
+        name: end_date
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Dashboard Todo List Cancel Shipment
+      tags:
+      - DashboardToDoList
+  /v1/dashboard/todolist/processedshipment:
+    get:
+      consumes:
+      - application/json
+      description: Get Dashboard Todo List Processed Shipment
+      parameters:
+      - description: Start Date
+        in: query
+        name: start_date
+        required: true
+        type: string
+      - description: End Date
+        in: query
+        name: end_date
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Dashboard Todo List Processed Shipment
+      tags:
+      - DashboardToDoList
+  /v1/dashboard/todolist/toprocessshipment:
+    get:
+      consumes:
+      - application/json
+      description: Get Dashboard Todo List To Process Shipment
+      parameters:
+      - description: Start Date
+        in: query
+        name: start_date
+        required: true
+        type: string
+      - description: End Date
+        in: query
+        name: end_date
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Dashboard Todo List To Process Shipment
+      tags:
+      - DashboardToDoList
+  /v1/event:
+    get:
+      consumes:
+      - application/json
+      description: Get All Event
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get All Event
+      tags:
+      - Event
+    post:
+      consumes:
+      - application/json
+      description: Create Event
+      parameters:
+      - description: Create Event Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.EventRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Create Event
+      tags:
+      - Event
+  /v1/event/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Event
+      parameters:
+      - description: Event ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Delete Event
+      tags:
+      - Event
+    get:
+      consumes:
+      - application/json
+      description: Get Event By ID
+      parameters:
+      - description: Event ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get Event By ID
+      tags:
+      - Event
+    put:
+      consumes:
+      - application/json
+      description: Update Event
+      parameters:
+      - description: Event ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update Event Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.EventRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Update Event
+      tags:
+      - Event
+  /v1/faq:
+    get:
+      consumes:
+      - application/json
+      description: Get Faqs
+      parameters:
+      - description: Page
+        in: query
+        name: page
+        type: integer
+      - description: Limit
+        in: query
+        name: limit
+        type: integer
+      - description: Search
+        in: query
+        name: search
+        type: string
+      - description: Sort
+        in: query
+        name: sort
+        type: string
+      - description: Order
+        in: query
+        name: order
+        type: string
+      - description: Offset
+        in: query
+        name: offset
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get Faqs
+      tags:
+      - FAQ
+    post:
+      consumes:
+      - application/json
+      description: Create Faq
+      parameters:
+      - description: Create Faq Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.FaqRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Create Faq
+      tags:
+      - FAQ
+  /v1/faq/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Faq
+      parameters:
+      - description: Faq ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Delete Faq
+      tags:
+      - FAQ
+    get:
+      consumes:
+      - application/json
+      description: Get Faq By ID
+      parameters:
+      - description: Faq ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get Faq By ID
+      tags:
+      - FAQ
+    put:
+      consumes:
+      - application/json
+      description: Update Faq
+      parameters:
+      - description: Faq ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update Faq Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.FaqRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Update Faq
+      tags:
+      - FAQ
+  /v1/file/upload:
+    post:
+      consumes:
+      - multipart/form-data
+      description: Upload File
+      parameters:
+      - description: File to upload (PDF, JPEG, JPG, PNG)
+        in: formData
+        name: file
+        required: true
+        type: file
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Upload File
+      tags:
+      - File
+  /v1/file/upload-multiple:
+    post:
+      consumes:
+      - multipart/form-data
+      description: Upload Multiple Files
+      parameters:
+      - description: Files to upload (PDF, JPEG, JPG, PNG)
+        in: formData
+        name: files
+        required: true
+        type: file
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Upload Multiple Files
+      tags:
+      - File
+  /v1/host:
+    get:
+      consumes:
+      - application/json
+      description: Get Hosts
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Hosts
+      tags:
+      - Host
+    post:
+      consumes:
+      - application/json
+      description: Create Host
+      parameters:
+      - description: Create Host Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.HostRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Create Host
+      tags:
+      - Host
+  /v1/host/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Host
+      parameters:
+      - description: Host ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Delete Host
+      tags:
+      - Host
+    get:
+      consumes:
+      - application/json
+      description: Get Host By ID
+      parameters:
+      - description: Host ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Host By ID
+      tags:
+      - Host
+    put:
+      consumes:
+      - application/json
+      description: Update Host
+      parameters:
+      - description: Host ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update Host Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.HostRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Update Host
+      tags:
+      - Host
+  /v1/log:
+    get:
+      consumes:
+      - application/json
+      description: Get Logs
+      parameters:
+      - description: Search
+        in: query
+        name: search
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: integer
+      - description: Sort
+        in: query
+        name: sort
+        type: string
+      - description: Order
+        in: query
+        name: order
+        type: string
+      - description: Offset
+        in: query
+        name: offset
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Logs
+      tags:
+      - Log
+  /v1/log/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Log By ID
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Delete Log By ID
+      tags:
+      - Log
+    get:
+      consumes:
+      - application/json
+      description: Get Log By ID
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Log By ID
+      tags:
+      - Log
+  /v1/lp/banner:
+    get:
+      consumes:
+      - application/json
+      description: Get All Lp Banner
+      parameters:
+      - description: Flag
+        in: query
+        name: flag
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get All Lp Banner
+      tags:
+      - LpBanner
+    post:
+      consumes:
+      - application/json
+      description: Create Lp Banner
+      parameters:
+      - description: Create Lp Banner Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.LpBannerRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Create Lp Banner
+      tags:
+      - LpBanner
+  /v1/lp/banner/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Lp Banner
+      parameters:
+      - description: Lp Banner ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Delete Lp Banner
+      tags:
+      - LpBanner
+    put:
+      consumes:
+      - application/json
+      description: Update Lp Banner
+      parameters:
+      - description: Lp Banner ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update Lp Banner Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.LpBannerRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Update Lp Banner
+      tags:
+      - LpBanner
+  /v1/lp/best-seller:
+    get:
+      consumes:
+      - application/json
+      description: Get All Lp Best Seller
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get All Lp Best Seller
+      tags:
+      - LpBestSeller
+    post:
+      consumes:
+      - application/json
+      description: Create Lp Best Seller
+      parameters:
+      - description: Create Lp Best Seller Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.LpBestSellerRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Create Lp Best Seller
+      tags:
+      - LpBestSeller
+  /v1/lp/best-seller/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Lp Best Seller
+      parameters:
+      - description: Lp Best Seller ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Delete Lp Best Seller
+      tags:
+      - LpBestSeller
+    get:
+      consumes:
+      - application/json
+      description: Get Lp Best Seller By ID
+      parameters:
+      - description: Lp Best Seller ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get Lp Best Seller By ID
+      tags:
+      - LpBestSeller
+    put:
+      consumes:
+      - application/json
+      description: Update Lp Best Seller
+      parameters:
+      - description: Lp Best Seller ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update Lp Best Seller Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.LpBestSellerRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Update Lp Best Seller
+      tags:
+      - LpBestSeller
+  /v1/lp/sale-banner:
+    get:
+      consumes:
+      - application/json
+      description: Get All Lp Sale Banner
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get All Lp Sale Banner
+      tags:
+      - LpSaleBanner
+    post:
+      consumes:
+      - application/json
+      description: Create Lp Sale Banner
+      parameters:
+      - description: Create Lp Sale Banner Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.LpSaleBannerRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Create Lp Sale Banner
+      tags:
+      - LpSaleBanner
+  /v1/lp/sale-banner/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Lp Sale Banner
+      parameters:
+      - description: Lp Sale Banner ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Delete Lp Sale Banner
+      tags:
+      - LpSaleBanner
+    get:
+      consumes:
+      - application/json
+      description: Get Lp Sale Banner By ID
+      parameters:
+      - description: Lp Sale Banner ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get Lp Sale Banner By ID
+      tags:
+      - LpSaleBanner
+    put:
+      consumes:
+      - application/json
+      description: Update Lp Sale Banner
+      parameters:
+      - description: Lp Sale Banner ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update Lp Sale Banner Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.LpSaleBannerRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Update Lp Sale Banner
+      tags:
+      - LpSaleBanner
+  /v1/lp/testimoni:
+    get:
+      consumes:
+      - application/json
+      description: Get All Lp Testimoni
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get All Lp Testimoni
+      tags:
+      - LpTestimoni
+    post:
+      consumes:
+      - application/json
+      description: Create Lp Testimoni
+      parameters:
+      - description: Create Lp Testimoni Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.LpTestimoniRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Create Lp Testimoni
+      tags:
+      - LpTestimoni
+  /v1/lp/testimoni/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Lp Testimoni
+      parameters:
+      - description: Lp Testimoni ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Delete Lp Testimoni
+      tags:
+      - LpTestimoni
+    get:
+      consumes:
+      - application/json
+      description: Get Lp Testimoni By ID
+      parameters:
+      - description: Lp Testimoni ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get Lp Testimoni By ID
+      tags:
+      - LpTestimoni
+    put:
+      consumes:
+      - application/json
+      description: Update Lp Testimoni
+      parameters:
+      - description: Lp Testimoni ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update Lp Testimoni Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.LpTestimoniRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Update Lp Testimoni
+      tags:
+      - LpTestimoni
+  /v1/midtrans:
+    post:
+      consumes:
+      - application/json
+      description: Midtrans Payment
+      parameters:
+      - description: Midtrans Payment Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.MidtransPaymentRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Midtrans Payment
+      tags:
+      - Midtrans
+  /v1/midtrans/checkstatuspayment:
+    get:
+      consumes:
+      - application/json
+      description: Check Payment Method
+      parameters:
+      - description: Invoice ID
+        in: query
+        name: invoice_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Check Payment Method
+      tags:
+      - Midtrans
+  /v1/notification/user-helper:
+    post:
+      consumes:
+      - application/json
+      description: Send Email User Helper
+      parameters:
+      - description: Send Email User Helper Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.UserEmailHelperNotification'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Send Email User Helper
+      tags:
+      - Notification
+  /v1/order:
+    get:
+      consumes:
+      - application/json
+      description: Get Orders
+      parameters:
+      - description: User ID
+        in: query
+        name: user_id
+        type: integer
+      - description: Resi
+        in: query
+        name: resi
+        type: string
+      - description: Created At Margin Top
+        in: query
+        name: created_at_margin_top
+        type: string
+      - description: Created At Margin Bottom
+        in: query
+        name: created_at_margin_bottom
+        type: string
+      - description: Search by invoice_id
+        in: query
+        name: search
+        type: string
+      - description: Status
+        in: query
+        name: status
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: integer
+      - description: Sort
+        in: query
+        name: sort
+        type: string
+      - description: Order
+        in: query
+        name: order
+        type: string
+      - description: Offset
+        in: query
+        name: offset
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Orders
+      tags:
+      - Order
+    post:
+      consumes:
+      - application/json
+      description: Create Order
+      parameters:
+      - description: Create Order Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.OrderRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Create Order
+      tags:
+      - Order
+  /v1/order/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Order
+      parameters:
+      - description: Order ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Delete Order
+      tags:
+      - Order
+    get:
+      consumes:
+      - application/json
+      description: Get Order By ID
+      parameters:
+      - description: Order ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Order By ID
+      tags:
+      - Order
+    put:
+      consumes:
+      - application/json
+      description: Update Order
+      parameters:
+      - description: Order ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update Order Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.OrderRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Update Order
+      tags:
+      - Order
+  /v1/order/change-status/{id}:
+    put:
+      consumes:
+      - application/json
+      description: Update Status Order
+      parameters:
+      - description: Order ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update Status Order Request
+        in: body
+        name: req
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.ChangeStatusOrderRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Update Status Order
+      tags:
+      - Order
+  /v1/order/order-detail:
+    get:
+      consumes:
+      - application/json
+      description: Get Order Detail By Order ID
+      parameters:
+      - description: Order ID
+        in: query
+        name: order_id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Order Detail By Order ID
+      tags:
+      - OrderDetail
+  /v1/order/order-detail/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Order Detail
+      parameters:
+      - description: Order Detail ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Delete Order Detail
+      tags:
+      - OrderDetail
+    get:
+      consumes:
+      - application/json
+      description: Get Order Detail By ID
+      parameters:
+      - description: Order Detail ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Order Detail By ID
+      tags:
+      - OrderDetail
+    put:
+      consumes:
+      - application/json
+      description: Update Order Detail
+      parameters:
+      - description: Order Detail ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update Order Detail Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.OrderDetailRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Update Order Detail
+      tags:
+      - OrderDetail
+  /v1/order/user:
+    get:
+      consumes:
+      - application/json
+      description: Get Order By User ID
+      parameters:
+      - description: Resi
+        in: query
+        name: resi
+        type: string
+      - description: Created At Margin Top
+        in: query
+        name: created_at_margin_top
+        type: string
+      - description: Created At Margin Bottom
+        in: query
+        name: created_at_margin_bottom
+        type: string
+      - description: Search by invoice_id
+        in: query
+        name: search
+        type: string
+      - description: Status
+        in: query
+        name: status
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: integer
+      - description: Sort
+        in: query
+        name: sort
+        type: string
+      - description: Order
+        in: query
+        name: order
+        type: string
+      - description: Offset
+        in: query
+        name: offset
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Order By User ID
+      tags:
+      - Order
+  /v1/privacy-policy:
+    get:
+      consumes:
+      - application/json
+      description: Get Privacy Policy
+      parameters:
+      - description: search By Title
+        in: query
+        name: search
+        type: string
+      - description: limit default 10
+        in: query
+        name: limit
+        type: string
+      - description: offset
+        in: query
+        name: offset
+        type: string
+      - description: sort ASC or DESC
+        in: query
+        name: sort
+        type: string
+      - description: order by id
+        in: query
+        name: order
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Privacy Policy
+      tags:
+      - PrivacyPolicy
+    post:
+      consumes:
+      - application/json
+      description: Create Privacy Policy
+      parameters:
+      - description: Create Privacy Policy Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.PrivacyPolicyRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Create Privacy Policy
+      tags:
+      - PrivacyPolicy
+  /v1/privacy-policy/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Privacy Policy
+      parameters:
+      - description: Privacy Policy ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Delete Privacy Policy
+      tags:
+      - PrivacyPolicy
+    get:
+      consumes:
+      - application/json
+      description: Get Privacy Policy By ID
+      parameters:
+      - description: Privacy Policy ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Privacy Policy By ID
+      tags:
+      - PrivacyPolicy
+    put:
+      consumes:
+      - application/json
+      description: Update Privacy Policy
+      parameters:
+      - description: Privacy Policy ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update Privacy Policy Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.PrivacyPolicyRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Update Privacy Policy
+      tags:
+      - PrivacyPolicy
+  /v1/product:
+    get:
+      consumes:
+      - application/json
+      description: Get Products
+      parameters:
+      - description: kategori_id
+        in: query
+        name: kategori_id
+        type: string
+      - description: is_sale true or false
+        in: query
+        name: is_sale
+        type: string
+      - description: is_ready true or false
+        in: query
+        name: is_ready
+        type: string
+      - description: price_max
+        in: query
+        name: price_max
+        type: string
+      - description: price_min
+        in: query
+        name: price_min
+        type: string
+      - description: terlaris true or false
+        in: query
+        name: terlaris
+        type: string
+      - description: terbaru true or false
+        in: query
+        name: terbaru
+        type: string
+      - description: tertinggi true or false
+        in: query
+        name: tertinggi
+        type: string
+      - description: status 0 = inactive, 1 = active
+        in: query
+        name: status
+        type: string
+      - description: search
+        in: query
+        name: search
+        type: string
+      - description: limit default 10
+        in: query
+        name: limit
+        type: string
+      - description: offset 0 = first page, 10 = second page, 20 = third page, etc
+        in: query
+        name: offset
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get Products
+      tags:
+      - Product
+    post:
+      consumes:
+      - application/json
+      description: Create Product
+      parameters:
+      - description: Create Product Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.ProductRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Create Product
+      tags:
+      - Product
+  /v1/product-package:
+    get:
+      consumes:
+      - application/json
+      description: Get Product Packages
+      parameters:
+      - description: search product package by name
+        in: query
+        name: search
+        type: string
+      - description: limit default 10
+        in: query
+        name: limit
+        type: string
+      - description: offset
+        in: query
+        name: offset
+        type: string
+      - description: status 0 = inactive, 1 = active
+        in: query
+        name: status
+        type: string
+      - description: sort ASC or DESC
+        in: query
+        name: sort
+        type: string
+      - description: order by id
+        in: query
+        name: order
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Product Packages
+      tags:
+      - ProductPackage
+    post:
+      consumes:
+      - application/json
+      description: Create Product Package
+      parameters:
+      - description: Create Product Package Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.ProductPackageRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Create Product Package
+      tags:
+      - ProductPackage
+  /v1/product-package/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Product Package
+      parameters:
+      - description: Product Package ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Delete Product Package
+      tags:
+      - ProductPackage
+    get:
+      consumes:
+      - application/json
+      description: Get Product Package By ID
+      parameters:
+      - description: Product Package ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Product Package By ID
+      tags:
+      - ProductPackage
+    put:
+      consumes:
+      - application/json
+      description: Update Product Package
+      parameters:
+      - description: Product Package ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update Product Package Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.ProductPackageRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Update Product Package
+      tags:
+      - ProductPackage
+  /v1/product-package/detail:
+    get:
+      consumes:
+      - application/json
+      description: Get Product Package Details
+      parameters:
+      - description: Product Package ID
+        in: query
+        name: package_id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Product Package Details
+      tags:
+      - ProductPackageDetail
+    post:
+      consumes:
+      - application/json
+      description: Create Product Package Detail
+      parameters:
+      - description: Create Product Package Detail Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.ProductPackageDetailCreateRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Create Product Package Detail
+      tags:
+      - ProductPackageDetail
+  /v1/product-package/detail/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Product Package Detail
+      parameters:
+      - description: Product Package Detail ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Delete Product Package Detail
+      tags:
+      - ProductPackageDetail
+    get:
+      consumes:
+      - application/json
+      description: Get Product Package Detail By ID
+      parameters:
+      - description: Product Package Detail ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Product Package Detail By ID
+      tags:
+      - ProductPackageDetail
+    put:
+      consumes:
+      - application/json
+      description: Update Product Package Detail
+      parameters:
+      - description: Product Package Detail ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update Product Package Detail Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.ProductPackageDetailRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Update Product Package Detail
+      tags:
+      - ProductPackageDetail
+  /v1/product/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Product
+      parameters:
+      - description: Product ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Delete Product
+      tags:
+      - Product
+    get:
+      consumes:
+      - application/json
+      description: Get Product By ID
+      parameters:
+      - description: Product ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get Product By ID
+      tags:
+      - Product
+    put:
+      consumes:
+      - application/json
+      description: Update Product
+      parameters:
+      - description: Product ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update Product Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.ProductUpdateRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Update Product
+      tags:
+      - Product
+  /v1/product/all:
+    get:
+      consumes:
+      - application/json
+      description: Get All Products
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get All Products
+      tags:
+      - Product
+  /v1/product/cart:
+    get:
+      consumes:
+      - application/json
+      description: Get cart details
+      parameters:
+      - description: User ID
+        in: query
+        name: user_id
+        type: integer
+      - description: Product ID
+        in: query
+        name: product_id
+        type: integer
+      - description: Package ID
+        in: query
+        name: package_id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get cart details
+      tags:
+      - ProductCart
+    post:
+      consumes:
+      - application/json
+      description: Create cart detail
+      parameters:
+      - description: Create Cart Detail Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.CartDetailRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Create cart detail
+      tags:
+      - ProductCart
+  /v1/product/cart/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete cart detail
+      parameters:
+      - description: Cart Detail ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Delete cart detail
+      tags:
+      - ProductCart
+    get:
+      consumes:
+      - application/json
+      description: Get cart detail by id
+      parameters:
+      - description: Cart Detail ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get cart detail by id
+      tags:
+      - ProductCart
+    put:
+      consumes:
+      - application/json
+      description: Update cart detail
+      parameters:
+      - description: Cart Detail ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update Cart Detail Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.CartDetailRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Update cart detail
+      tags:
+      - ProductCart
+  /v1/product/category:
+    post:
+      consumes:
+      - application/json
+      description: Create Category
+      parameters:
+      - description: Create Category Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.CategoryRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Create Category
+      tags:
+      - Category
+  /v1/product/category/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Category
+      parameters:
+      - description: Category ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Delete Category
+      tags:
+      - Category
+    get:
+      consumes:
+      - application/json
+      description: Get Category By ID
+      parameters:
+      - description: Category ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Category By ID
+      tags:
+      - Category
+    put:
+      consumes:
+      - application/json
+      description: Update Category
+      parameters:
+      - description: Category ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update Category Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.CategoryRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Update Category
+      tags:
+      - Category
+  /v1/product/category/all:
+    get:
+      consumes:
+      - application/json
+      description: Get All Categories
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get All Categories
+      tags:
+      - Category
+  /v1/product/recomendation:
+    get:
+      consumes:
+      - application/json
+      description: Get Product Recomendation
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get Product Recomendation
+      tags:
+      - Product
+  /v1/product/size:
+    post:
+      consumes:
+      - application/json
+      description: Create Product Size
+      parameters:
+      - description: Create Product Size Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.ProductSizeRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Create Product Size
+      tags:
+      - ProductSize
+  /v1/product/size/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Product Size
+      parameters:
+      - description: Product Size ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Delete Product Size
+      tags:
+      - ProductSize
+    get:
+      consumes:
+      - application/json
+      description: Get Product Size By ID
+      parameters:
+      - description: Product Size ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get Product Size By ID
+      tags:
+      - ProductSize
+    put:
+      consumes:
+      - application/json
+      description: Update Product Size
+      parameters:
+      - description: Product Size ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update Product Size Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.ProductSizeRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Update Product Size
+      tags:
+      - ProductSize
+  /v1/product/size/{product_id}:
+    get:
+      consumes:
+      - application/json
+      description: Get Product Size By Product ID
+      parameters:
+      - description: Product ID
+        in: path
+        name: product_id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get Product Size By Product ID
+      tags:
+      - ProductSize
+  /v1/product/testimoni:
+    get:
+      consumes:
+      - application/json
+      description: Get Testimoni Products
+      parameters:
+      - description: Product ID
+        in: query
+        name: product_id
+        type: integer
+      - description: User ID
+        in: query
+        name: user_id
+        type: integer
+      - description: Rating
+        in: query
+        name: rating
+        type: integer
+      - description: Is Image
+        in: query
+        name: is_image
+        type: boolean
+      - description: Page
+        in: query
+        name: page
+        type: integer
+      - description: Limit
+        in: query
+        name: limit
+        type: integer
+      - description: Search
+        in: query
+        name: search
+        type: string
+      - description: Sort
+        in: query
+        name: sort
+        type: string
+      - description: Order
+        in: query
+        name: order
+        type: string
+      - description: Status 0 = Inactive, 1 = Active
+        in: query
+        name: status
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get Testimoni Products
+      tags:
+      - TestimoniProduct
+    post:
+      consumes:
+      - application/json
+      description: Create Testimoni Product
+      parameters:
+      - description: Create Testimoni Product Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.TestimoniProductRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Create Testimoni Product
+      tags:
+      - TestimoniProduct
+  /v1/product/testimoni/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Testimoni Product
+      parameters:
+      - description: Testimoni Product ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Delete Testimoni Product
+      tags:
+      - TestimoniProduct
+    get:
+      consumes:
+      - application/json
+      description: Get Testimoni Product By ID
+      parameters:
+      - description: Testimoni Product ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Testimoni Product By ID
+      tags:
+      - TestimoniProduct
+    put:
+      consumes:
+      - application/json
+      description: Update Testimoni Product
+      parameters:
+      - description: Testimoni Product ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update Testimoni Product Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.TestimoniProductRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Update Testimoni Product
+      tags:
+      - TestimoniProduct
+  /v1/product/testimoni/like:
+    post:
+      consumes:
+      - application/json
+      description: LikeUnlikeTestimoniProduct
+      parameters:
+      - description: LikeUnlikeTestimoniProduct Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.LikeRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: LikeUnlikeTestimoniProduct
+      tags:
+      - TestimoniProductLike
+  /v1/product/testimoni/status/{id}:
+    put:
+      consumes:
+      - application/json
+      description: Update Status Testimoni Product
+      parameters:
+      - description: Testimoni Product ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update Status Testimoni Product Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.TestimoniProductUpdateStatusRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Update Status Testimoni Product
+      tags:
+      - TestimoniProduct
+  /v1/region/city:
+    get:
+      consumes:
+      - application/json
+      description: Get all cities
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get all cities
+      tags:
+      - Region
+  /v1/region/city/{prov_id}:
+    get:
+      consumes:
+      - application/json
+      description: Get all cities
+      parameters:
+      - description: Province ID
+        in: path
+        name: prov_id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get all cities
+      tags:
+      - Region
+  /v1/region/province:
+    get:
+      consumes:
+      - application/json
+      description: Get all provinces
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get all provinces
+      tags:
+      - Region
+  /v1/region/subdistrict:
+    get:
+      consumes:
+      - application/json
+      description: Get all subdistricts
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get all subdistricts
+      tags:
+      - Region
+  /v1/region/subdistrict/{city_id}:
+    get:
+      consumes:
+      - application/json
+      description: Get all subdistricts
+      parameters:
+      - description: City ID
+        in: path
+        name: city_id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get all subdistricts
+      tags:
+      - Region
+  /v1/role/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Get Role By ID
+      parameters:
+      - description: Role ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Role By ID
+      tags:
+      - Role
+  /v1/role/all:
+    get:
+      consumes:
+      - application/json
+      description: Get All Roles
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get All Roles
+      tags:
+      - Role
+  /v1/shipping/cancel-order:
+    post:
+      consumes:
+      - application/json
+      description: Ican Deliv Cancel Order
+      parameters:
+      - description: Request body
+        in: body
+        name: req
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.IcanDelivAWBRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Ican Deliv Cancel Order
+      tags:
+      - Shipping
+  /v1/shipping/category:
+    get:
+      consumes:
+      - application/json
+      description: Ican Deliv Get Category
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Ican Deliv Get Category
+      tags:
+      - Shipping
+  /v1/shipping/cek-tarif:
+    post:
+      consumes:
+      - application/json
+      description: Ican Deliv Cek Tarif
+      parameters:
+      - description: Request body
+        in: body
+        name: req
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.IcanDelivDataCheckTarifRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Ican Deliv Cek Tarif
+      tags:
+      - Shipping
+  /v1/shipping/create-order:
+    post:
+      consumes:
+      - application/json
+      description: Ican Deliv Create Order
+      parameters:
+      - description: Request body
+        in: body
+        name: req
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.IcanDelivCreateOrderRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Ican Deliv Create Order
+      tags:
+      - Shipping
+  /v1/shipping/deposit:
+    get:
+      consumes:
+      - application/json
+      description: Ican Deliv Get Deposit
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Ican Deliv Get Deposit
+      tags:
+      - Shipping
+  /v1/shipping/icanlogin:
+    get:
+      consumes:
+      - application/json
+      description: Ican Deliv Test Login
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Ican Deliv Test Login
+      tags:
+      - Shipping
+  /v1/shipping/shipping-detail:
+    post:
+      consumes:
+      - application/json
+      description: Ican Deliv Get Shipping Detail
+      parameters:
+      - description: Request body
+        in: body
+        name: req
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.IcanDelivAWBRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Ican Deliv Get Shipping Detail
+      tags:
+      - Shipping
+  /v1/shipping/tracking:
+    post:
+      consumes:
+      - application/json
+      description: Ican Deliv Get Tracking
+      parameters:
+      - description: Request body
+        in: body
+        name: req
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.IcanDelivAWBRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Ican Deliv Get Tracking
+      tags:
+      - Shipping
+  /v1/size:
+    get:
+      consumes:
+      - application/json
+      description: Get Sizes
+      parameters:
+      - description: Search
+        in: query
+        name: search
+        type: string
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      - description: Sort
+        in: query
+        name: sort
+        type: string
+      - description: Order
+        in: query
+        name: order
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Sizes
+      tags:
+      - Size
+    post:
+      consumes:
+      - application/json
+      description: Create Size
+      parameters:
+      - description: Create Size Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.SizeRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Create Size
+      tags:
+      - Size
+  /v1/size/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Size
+      parameters:
+      - description: Size ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Delete Size
+      tags:
+      - Size
+    get:
+      consumes:
+      - application/json
+      description: Get Size By ID
+      parameters:
+      - description: Size ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Size By ID
+      tags:
+      - Size
+    put:
+      consumes:
+      - application/json
+      description: Update Size
+      parameters:
+      - description: Size ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update Size Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.SizeRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Update Size
+      tags:
+      - Size
+  /v1/syarat-ketentuan:
+    get:
+      consumes:
+      - application/json
+      description: Get Syarat Ketentuan
+      parameters:
+      - description: search By Title
+        in: query
+        name: search
+        type: string
+      - description: limit default 10
+        in: query
+        name: limit
+        type: string
+      - description: offset
+        in: query
+        name: offset
+        type: string
+      - description: sort ASC or DESC
+        in: query
+        name: sort
+        type: string
+      - description: order by id
+        in: query
+        name: order
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get Syarat Ketentuan
+      tags:
+      - SyaratKetentuan
+    post:
+      consumes:
+      - application/json
+      description: Create Syarat Ketentuan
+      parameters:
+      - description: Create Syarat Ketentuan Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.SyaratKetentuanRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Create Syarat Ketentuan
+      tags:
+      - SyaratKetentuan
+  /v1/syarat-ketentuan/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Syarat Ketentuan
+      parameters:
+      - description: Syarat Ketentuan ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Delete Syarat Ketentuan
+      tags:
+      - SyaratKetentuan
+    get:
+      consumes:
+      - application/json
+      description: Get Syarat Ketentuan By ID
+      parameters:
+      - description: Syarat Ketentuan ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get Syarat Ketentuan By ID
+      tags:
+      - SyaratKetentuan
+    put:
+      consumes:
+      - application/json
+      description: Update Syarat Ketentuan
+      parameters:
+      - description: Syarat Ketentuan ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update Syarat Ketentuan Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.SyaratKetentuanRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Update Syarat Ketentuan
+      tags:
+      - SyaratKetentuan
+  /v1/user:
+    get:
+      consumes:
+      - application/json
+      description: Get Users
+      parameters:
+      - description: Role ID
+        in: query
+        name: role_id
+        type: integer
+      - description: Status
+        in: query
+        name: status
+        type: string
+      - description: Page
+        in: query
+        name: page
+        type: integer
+      - description: Limit
+        in: query
+        name: limit
+        type: integer
+      - description: Search
+        in: query
+        name: search
+        type: string
+      - description: Sort
+        in: query
+        name: sort
+        type: string
+      - description: Order
+        in: query
+        name: order
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Users
+      tags:
+      - User
+    post:
+      consumes:
+      - application/json
+      description: Create User
+      parameters:
+      - description: Create User Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.UserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Create User
+      tags:
+      - User
+  /v1/user/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete User
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Delete User
+      tags:
+      - User
+    get:
+      consumes:
+      - application/json
+      description: Get User By ID
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get User By ID
+      tags:
+      - User
+    put:
+      consumes:
+      - application/json
+      description: Update User
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update User Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.UserUpdateRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Update User
+      tags:
+      - User
+  /v1/user/all:
+    get:
+      consumes:
+      - application/json
+      description: Get All Users
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get All Users
+      tags:
+      - User
+  /v1/voucher:
+    get:
+      consumes:
+      - application/json
+      description: Get All Vouchers
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get All Vouchers
+      tags:
+      - Voucher
+    post:
+      consumes:
+      - application/json
+      description: Create Voucher
+      parameters:
+      - description: Create Voucher Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.VoucherRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Create Voucher
+      tags:
+      - Voucher
+  /v1/voucher/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Voucher
+      parameters:
+      - description: Voucher ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Delete Voucher
+      tags:
+      - Voucher
+    get:
+      consumes:
+      - application/json
+      description: Get Voucher By ID
+      parameters:
+      - description: Voucher ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Voucher By ID
+      tags:
+      - Voucher
+    put:
+      consumes:
+      - application/json
+      description: Update Voucher
+      parameters:
+      - description: Voucher ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update Voucher Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/reqres.VoucherRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Update Voucher
+      tags:
+      - Voucher
+  /v1/voucher/code:
+    get:
+      consumes:
+      - application/json
+      description: Get Voucher By Code
+      parameters:
+      - description: Voucher Code
+        in: query
+        name: code
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - JwtToken: []
+      summary: Get Voucher By Code
+      tags:
+      - Voucher
+securityDefinitions:
+  JwtToken:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"
