@@ -16,7 +16,7 @@ Unduh dan instal Golang terbaru dari [sini](https://golang.org/dl/).
 Clone repository menggunakan perintah berikut untuk mendapatkan source code project ini:
 
 ```bash
-git clone https://github.com/Reynolds398/Tamplate-Go-Echo
+git clone https://github.com/Rezafadi/Tamplate-Go-Echo.git
 ```
 
 ### 3. Open Project
